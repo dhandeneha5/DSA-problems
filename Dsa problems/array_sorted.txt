@@ -1,0 +1,32 @@
+class Solution {
+
+public:
+    bool check(vector<int>& nums) {
+
+        int n = nums.size();
+
+        int Break = -1;
+
+        for(int i = 0; i < n - 1; i++){
+            if(nums[i] > nums[i + 1]){
+                Break = i;
+            }
+        }
+
+        if(Break == n - 1){
+            return true;
+        }
+
+        else {
+            for(int i = Break + 1; i < n - 1; i++){
+                if(nums[i] > nums[i + 1]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+        
+    }
+};
+        
